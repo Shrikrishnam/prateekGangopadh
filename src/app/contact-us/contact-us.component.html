@@ -1,0 +1,155 @@
+<div class="card w-75 mx-auto " style="position: initial;margin:40px">
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Contact Us</strong>
+      </h5>
+<div class="card-body px-lg-5 pt-0">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+            <label for="exampleInputfirstname">First Name</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="firstname"
+                placeholder="First Name"
+            />
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.firstname.touched &&
+                    contactForm.controls.firstname.errors?.required
+                "
+            >
+                Please enter first name.!
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputlastname">Last Name</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="lastname"
+                placeholder="Last Name"
+            />
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.lastname.touched &&
+                    contactForm.controls.lastname.errors?.required
+                "
+            >
+                Please enter last name.!
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputphonenumber">Phone Number</label>
+            <input
+                type="number"
+                class="form-control"
+                formControlName="phonenumber"
+                placeholder="Phone Number"
+            />
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.phonenumber.touched &&
+                    contactForm.controls.phonenumber.errors?.required
+                "
+            >
+                Please enter phone number.!
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputemail">Email</label>
+            <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+                placeholder="Email"
+            />
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.email.touched &&
+                    contactForm.controls.email.errors?.required
+                "
+            >
+                Please enter email.!
+            </small>
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.email.touched &&
+                    contactForm.controls.email.errors?.email
+                "
+            >
+                Enter the valid email .!
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputmessage">Message</label>
+            <textarea
+                type="text"
+                class="form-control"
+                formControlName="message"
+                placeholder="Message"
+            ></textarea>
+            <small
+                class="form-text text-muted"
+                *ngIf="
+                    contactForm.controls.message.touched &&
+                    contactForm.controls.message.errors?.required
+                "
+            >
+                Please enter message.!
+            </small>
+        </div>
+        <button class="btn btn-lg btn-outline-info text-center" type="submit">Submit</button>
+    </form>
+</div>    
+</div>
+
+<!--Displaying all the Contact Us requests-->
+<div class="card centered mx-auto" style="width: 100vw;">
+    <div class="row">
+        <div class="col">
+            <table
+                class="table table-responsive-sm table-hover table-dark table-outline mb-0"
+            >
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Sr. No.</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Phone Number</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let req of contactReqList; let i = index">
+                        <td class="text-center">{{ i + 1 }}.</td>
+                        <td class="text-center">
+                            {{ req.firstname }} {{ req.lastname }}
+                        </td>
+                        <td class="text-center">{{ req.email }}</td>
+                        <td class="text-center">{{ req.phonenumber }}</td>
+
+                        <td class="text-center">{{ req.message }}</td>
+                        <td class="text-center">
+                            <button
+                                (click)="deleteContactUs(req.id)"
+                                role="button"
+                                class="btn btn-warning"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

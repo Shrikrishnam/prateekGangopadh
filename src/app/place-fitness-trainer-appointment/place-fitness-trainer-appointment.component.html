@@ -1,0 +1,216 @@
+<div class="masthead">
+  <form [formGroup]="fitnessForm" class="text-center p-5">
+    <p class="h4 mb-4">Add an Appointment</p>
+
+    <div class="form-row mb-4">
+      <div class="col">
+        <input
+          autofocus
+          type="text"
+          formControlName="firstname"
+          id="defaultRegisterFormFirstName"
+          class="form-control"
+          placeholder="First name"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          formControlName="lastname"
+          id="defaultRegisterFormLastName"
+          class="form-control"
+          placeholder="Last name"
+        />
+      </div>
+    </div>
+
+    <input
+      type="email"
+      formControlName="email"
+      id="defaultRegisterFormEmail"
+      class="form-control mb-4"
+      placeholder="E-mail"
+    />
+    <input
+      type="number"
+      formControlName="age"
+      id="age"
+      class="form-control mb-4"
+      placeholder="Age"
+    />
+    <input
+      type="number"
+      formControlName="phonenumber"
+      id="phonenumber"
+      class="form-control mb-4"
+      placeholder="Phone Number"
+    />
+    <fieldset class="appointment-border">
+      <legend class="appointment-border">Address</legend>
+      <div class="form-row mb-4">
+        <div class="col">
+          <input
+            type="text"
+            formControlName="streetaddress"
+            id="streetaddress"
+            class="form-control"
+            placeholder="Street Name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            formControlName="city"
+            id="city"
+            class="form-control"
+            placeholder="City"
+          />
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col">
+          <input
+            type="text"
+            formControlName="state"
+            id="state"
+            class="form-control"
+            placeholder="State/Province"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            formControlName="country"
+            id="country"
+            class="form-control"
+            placeholder="Country"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            formControlName="pincode"
+            id="pincode"
+            class="form-control"
+            placeholder="Zip Code"
+          />
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-row mb-4">
+      <div class="col">
+        <label for="trainerpreference" class="form-control-label"
+          >Trainer Preference</label
+        >
+        <br />
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="trainerpreference"
+            id="inlineRadio1"
+            value="Male Trainer"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >Male Trainer</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="trainerpreference"
+            id="inlineRadio2"
+            value="Female Trainer"
+          />
+          <label class="form-check-label" for="inlineRadio2"
+            >Female Trainer</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="trainerpreference"
+            id="inlineRadio3"
+            value="No Preference"
+          />
+          <label class="form-check-label" for="inlineRadio3"
+            >No Preference</label
+          >
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="form-row mb-4">
+      <div class="col">
+        <label for="packages" class="form-control-label">Package</label>
+        <br />
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="packages"
+            id="500"
+            value="500"
+          />
+          <label class="form-check-label" for="500">500</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="packages"
+            id="1000"
+            value="1000"
+          />
+          <label class="form-check-label" for="1000">1000</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row mb-4">
+     <div class="col">
+      <div class="form-group">
+          <label for="sel1">Physiotherapist:</label>
+          <select class="form-control" id="physiotherapist" formControlName="physiotherapist">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+     </div>
+    </div>
+    <div class="form-row mb-4">
+      <div class="col">
+       <div class="form-group">
+          <input
+          type="number"
+          formControlName="inr"
+          id="inr"
+          class="form-control mb-4"
+          placeholder="INR"
+        />
+         </div>
+      </div>
+      <div class="col">
+       <div class="form-group">
+          <input
+          type="number"
+          formControlName="paisa"
+          id="paisa"
+          class="form-control mb-4"
+          placeholder="Paisa"
+        />
+         </div>
+      </div>
+     </div>
+   
+   
+    <button
+      class="btn btn-primary my-4 add-app"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      Add Appointment
+    </button>
+  </form>
+</div>

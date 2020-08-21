@@ -1,0 +1,57 @@
+<div class="masthead">
+  <div class="card centered mx-auto">
+        <div class="row ">
+          <div class="col ">
+            <table
+              class="table table-responsive-sm table-hover table-outline mb-0"
+            >
+              <thead class="thead-light">
+                <tr>
+                  <th class="text-center h1">Sl NO</th>
+                  <th class="text-center h2">Name</th>
+                  <th class="text-center h3">Address</th>
+                  <th class="text-center h4">City</th>
+                  <th class="text-center h5">Package</th>
+                  <th class="text-center h6">Trainer Preference</th>
+                  <th class="text-center h7">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of allAppointments; let i = index">
+                  <td class="text-center">{{ i + 1 }}.</td>
+                  <td class="text-center">
+                    {{ a.firstname }} {{ a.lastname }}
+                  </td>
+                  <td class="text-center">{{ a.streetaddress }}, {{a.country}}-{{a.pincode}}</td>
+
+                  <td class="text-center">{{ a.city }}</td>
+                  <td class="text-center">
+                    {{a.packages }}
+                  </td>
+                  <td class="text-center">{{ a.trainerpreference }}</td>
+                  <td class="text-center">{{ a.phonenumber }}</td>
+                  <td class="text-center">
+                    <a
+                    routerLink="../place-fitness-trainer-appointment/edit/{{ a.id }}"
+                      role="button"
+                      class="btn btn-success"
+                    >
+                      Edit
+                    </a>
+                  </td>
+                    <td class="text-center">  <button
+                      type="button"
+                      class="btn btn-success"
+                      (click)="deleteApp(a.id)"
+                    >
+                      Delete
+                    </button></td>
+                  
+               
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  </div>
+</div>
+

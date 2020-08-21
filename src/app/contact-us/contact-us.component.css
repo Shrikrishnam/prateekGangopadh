@@ -1,0 +1,11 @@
+
+  .masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(to bottom right, #fbca65, cyan);
+  }
